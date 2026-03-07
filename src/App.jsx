@@ -116,23 +116,33 @@ function NotificationCards() {
 // ─── NAV ───
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', h)
     return () => window.removeEventListener('scroll', h)
   }, [])
 
+  const closeMenu = () => setMenuOpen(false)
+
   return (
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
         <Logo />
-        <div className="nav__links">
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#pricing">Pricing</a>
+        <div className={`nav__links ${menuOpen ? 'nav__links--open' : ''}`}>
+          <a href="#features" onClick={closeMenu}>Features</a>
+          <a href="#how-it-works" onClick={closeMenu}>How It Works</a>
+          <a href="#pricing" onClick={closeMenu}>Pricing</a>
+          <a href="#pricing" className="btn btn--primary btn--sm nav__mobile-cta" onClick={closeMenu}>Get Started</a>
         </div>
-        <a href="#pricing" className="btn btn--primary btn--sm">Get Started</a>
+        <a href="#pricing" className="btn btn--primary btn--sm nav__desktop-cta">Get Started</a>
+        <button className="nav__burger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <span className={`nav__burger-line ${menuOpen ? 'nav__burger-line--open' : ''}`} />
+          <span className={`nav__burger-line ${menuOpen ? 'nav__burger-line--open' : ''}`} />
+          <span className={`nav__burger-line ${menuOpen ? 'nav__burger-line--open' : ''}`} />
+        </button>
       </div>
+      {menuOpen && <div className="nav__overlay" onClick={closeMenu} />}
     </nav>
   )
 }
