@@ -250,6 +250,98 @@ function Nav() {
   )
 }
 
+// ─── HERO PHONE MOCKUP ───
+function HeroPhone() {
+  const messages = [
+    { from: 'client', text: "Hi! Do you have any availability for a gel manicure this week?" },
+    { from: 'luma', text: "Hi! Yes, we do. Classic gel or gel with nail art? We also have a mani-pedi combo." },
+    { from: 'client', text: "Just a classic gel manicure please. What times on Friday?" },
+    { from: 'luma', text: "Friday we have 10:00am, 1:30pm, and 4:15pm. A classic gel takes about 45 min. Which suits you?" },
+  ]
+
+  const [phase, setPhase] = useState(0)
+  const totalPhases = messages.length * 2
+
+  useEffect(() => {
+    let timer
+    if (phase === 0) {
+      timer = setTimeout(() => setPhase(1), 800)
+    } else if (phase % 2 === 1) {
+      timer = setTimeout(() => setPhase(phase + 1), 1300)
+    } else if (phase < totalPhases) {
+      timer = setTimeout(() => setPhase(phase + 1), 1800)
+    } else {
+      timer = setTimeout(() => setPhase(0), 5000)
+    }
+    return () => clearTimeout(timer)
+  }, [phase, totalPhases])
+
+  const visibleCount = Math.floor(phase / 2)
+  const showTyping = phase % 2 === 1 && phase <= totalPhases
+
+  return (
+    <div className="hero-phone">
+      <div className="hero-phone__notch" />
+      <div className="hero-phone__header">
+        <div className="hero-phone__avatar"><LumaAvatarIcon size={28} /></div>
+        <div>
+          <div className="hero-phone__name">Glow Beauty Studio</div>
+          <div className="hero-phone__status">
+            <span className="hero-phone__status-dot" />
+            LUMA is online
+          </div>
+        </div>
+      </div>
+      <div className="hero-phone__messages">
+        {messages.slice(0, visibleCount).map((msg, i) => (
+          <div key={i} className={`hero-phone__msg hero-phone__msg--${msg.from}`}>
+            {msg.text}
+          </div>
+        ))}
+        {showTyping && (
+          <div className="hero-phone__typing">
+            <span /><span /><span />
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ─── HERO FLOATING TOASTS ───
+function HeroToasts() {
+  const toasts = [
+    { icon: <NailPolishIcon size={18} />, text: "New booking confirmed", color: 'rose' },
+    { icon: <StarIcon size={18} />, text: "5-star review received", color: 'green' },
+    { icon: <MassageIcon size={18} />, text: "Reminder sent automatically", color: 'lavender' },
+  ]
+  const [active, setActive] = useState(-1)
+
+  useEffect(() => {
+    const startTimer = setTimeout(() => setActive(0), 2000)
+    return () => clearTimeout(startTimer)
+  }, [])
+
+  useEffect(() => {
+    if (active < 0) return
+    const timer = setInterval(() => {
+      setActive(prev => (prev + 1) % toasts.length)
+    }, 3500)
+    return () => clearInterval(timer)
+  }, [active >= 0])
+
+  return (
+    <div className="hero-toasts">
+      {toasts.map((toast, i) => (
+        <div key={i} className={`hero-toast hero-toast--${toast.color} hero-toast--pos${i} ${active === i ? 'hero-toast--visible' : ''}`}>
+          {toast.icon}
+          <span>{toast.text}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 // ─── HERO ───
 function Hero() {
   return (
@@ -266,50 +358,55 @@ function Hero() {
         <div className="hero__particle hero__particle--6" />
       </div>
 
-      <div className="hero__content">
-        <div className="hero__badge">
-          <div className="hero__badge-dot" />
-          <span className="hero__badge-text">AI Receptionist for Beauty & Wellness</span>
-        </div>
-
-        <div className="hero__title-group">
-          <div className="hero__title-glow" />
-          <div className="hero__title-flourish">
-            <div className="hero__title-line" />
-            <div className="hero__title-diamond" />
-            <div className="hero__title-line" />
+      <div className="hero__split">
+        <div className="hero__text">
+          <div className="hero__badge">
+            <div className="hero__badge-dot" />
+            <span className="hero__badge-text">AI Receptionist for Beauty & Wellness</span>
           </div>
-          <h1 className="hero__title-word">LUMA</h1>
-          <div className="hero__title-flourish">
-            <div className="hero__title-line" />
-            <div className="hero__title-diamond" />
-            <div className="hero__title-line" />
-          </div>
-        </div>
-        <div className="hero__tagline">
-          <span className="gradient-text">Always on. Always radiant.</span>
-        </div>
 
-        <p className="subtitle subtitle--center hero__subtitle">
-          The AI receptionist built for salons, spas, and wellness businesses.
-          Handles client enquiries, books appointments, and follows up - so your diary is always full.
-        </p>
-
-        <div className="hero__actions">
-          <a href="#pricing" className="btn btn--primary">See Plans</a>
-          <a href="#how-it-works" className="btn btn--outline">How It Works</a>
-        </div>
-
-        <div className="hero__proof">
-          {["No manual follow-ups", "Set up in 48 hours", "Cancel anytime"].map((t, i) => (
-            <div key={i} className="hero__proof-item">
-              <CheckIcon className="hero__proof-check" />
-              <span>{t}</span>
+          <div className="hero__title-group">
+            <div className="hero__title-glow" />
+            <div className="hero__title-flourish">
+              <div className="hero__title-line" />
+              <div className="hero__title-diamond" />
+              <div className="hero__title-line" />
             </div>
-          ))}
+            <h1 className="hero__title-word">LUMA</h1>
+            <div className="hero__title-flourish">
+              <div className="hero__title-line" />
+              <div className="hero__title-diamond" />
+              <div className="hero__title-line" />
+            </div>
+          </div>
+          <div className="hero__tagline">
+            <span className="gradient-text">Always on. Always radiant.</span>
+          </div>
+
+          <p className="subtitle hero__subtitle">
+            The AI receptionist built for salons, spas, and wellness businesses.
+            Handles client enquiries, books appointments, and follows up - so your diary is always full.
+          </p>
+
+          <div className="hero__actions">
+            <a href="#pricing" className="btn btn--primary">See Plans</a>
+            <a href="#how-it-works" className="btn btn--outline">How It Works</a>
+          </div>
+
+          <div className="hero__proof">
+            {["No manual follow-ups", "Set up in 48 hours", "Cancel anytime"].map((t, i) => (
+              <div key={i} className="hero__proof-item">
+                <CheckIcon className="hero__proof-check" />
+                <span>{t}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <NotificationCards />
+        <div className="hero__visual">
+          <HeroPhone />
+          <HeroToasts />
+        </div>
       </div>
 
       <div className="hero__scroll">
