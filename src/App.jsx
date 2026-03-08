@@ -13,6 +13,109 @@ const ChevronDown = ({ className = '' }) => (
   </svg>
 )
 
+// ─── BEAUTY/WELLNESS SVG ICONS ───
+const NailPolishIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <path d="M12 2C10.5 2 9 3.5 9 5.5V10h6V5.5C15 3.5 13.5 2 12 2z" fill="url(#nailGrad)" opacity="0.9"/>
+    <rect x="10.5" y="10" width="3" height="10" rx="1.5" fill="url(#nailGrad)"/>
+    <rect x="9.5" y="19" width="5" height="3" rx="1" fill="url(#nailGrad)" opacity="0.7"/>
+    <defs><linearGradient id="nailGrad" x1="9" y1="2" x2="15" y2="22"><stop stopColor="#f9a8d4"/><stop offset="1" stopColor="#f472b6"/></linearGradient></defs>
+  </svg>
+)
+
+const MassageIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="5" r="3" fill="url(#massageGrad)" opacity="0.9"/>
+    <path d="M7 11c0-1 1-2 2.5-2h5c1.5 0 2.5 1 2.5 2v2c0 1-1 2-2 2l-1 5h-4l-1-5c-1 0-2-1-2-2v-2z" fill="url(#massageGrad)" opacity="0.8"/>
+    <path d="M5 10c1-1 2-1 3 0" stroke="#c084fc" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+    <path d="M16 10c1-1 2-1 3 0" stroke="#c084fc" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+    <defs><linearGradient id="massageGrad" x1="7" y1="2" x2="17" y2="20"><stop stopColor="#c084fc"/><stop offset="1" stopColor="#d8b4fe"/></linearGradient></defs>
+  </svg>
+)
+
+const StarIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9L12 2z" fill="url(#starGrad)"/>
+    <defs><linearGradient id="starGrad" x1="2" y1="2" x2="22" y2="20"><stop stopColor="#f9a8d4"/><stop offset="1" stopColor="#f472b6"/></linearGradient></defs>
+  </svg>
+)
+
+const PhoneIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <rect x="6" y="2" width="12" height="20" rx="3" stroke="url(#phoneGrad)" strokeWidth="1.5" fill="none"/>
+    <line x1="10" y1="19" x2="14" y2="19" stroke="url(#phoneGrad)" strokeWidth="1.5" strokeLinecap="round"/>
+    <defs><linearGradient id="phoneGrad" x1="6" y1="2" x2="18" y2="22"><stop stopColor="#f472b6"/><stop offset="1" stopColor="#c084fc"/></linearGradient></defs>
+  </svg>
+)
+
+const ClockIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="12" r="9" stroke="url(#clockGrad)" strokeWidth="1.5" fill="none"/>
+    <path d="M12 7v5l3.5 3.5" stroke="url(#clockGrad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <defs><linearGradient id="clockGrad" x1="3" y1="3" x2="21" y2="21"><stop stopColor="#f472b6"/><stop offset="1" stopColor="#c084fc"/></linearGradient></defs>
+  </svg>
+)
+
+const DoorIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <rect x="5" y="2" width="14" height="20" rx="2" stroke="url(#doorGrad)" strokeWidth="1.5" fill="none"/>
+    <circle cx="15" cy="12" r="1.2" fill="url(#doorGrad)"/>
+    <path d="M5 22h14" stroke="url(#doorGrad)" strokeWidth="1.5" strokeLinecap="round"/>
+    <defs><linearGradient id="doorGrad" x1="5" y1="2" x2="19" y2="22"><stop stopColor="#f472b6"/><stop offset="1" stopColor="#c084fc"/></linearGradient></defs>
+  </svg>
+)
+
+const ScissorsIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <circle cx="6" cy="6" r="3" stroke="url(#scissGrad)" strokeWidth="1.5" fill="none"/>
+    <circle cx="6" cy="18" r="3" stroke="url(#scissGrad)" strokeWidth="1.5" fill="none"/>
+    <path d="M8.5 8.5L20 4M8.5 15.5L20 20" stroke="url(#scissGrad)" strokeWidth="1.5" strokeLinecap="round"/>
+    <defs><linearGradient id="scissGrad" x1="3" y1="3" x2="20" y2="20"><stop stopColor="#f472b6"/><stop offset="1" stopColor="#c084fc"/></linearGradient></defs>
+  </svg>
+)
+
+const YogaIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="4" r="2.5" fill="url(#yogaGrad)" opacity="0.9"/>
+    <path d="M12 8v6M8 11l4 3 4-3M10 14l-3 6M14 14l3 6" stroke="url(#yogaGrad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <defs><linearGradient id="yogaGrad" x1="5" y1="2" x2="19" y2="20"><stop stopColor="#c084fc"/><stop offset="1" stopColor="#f472b6"/></linearGradient></defs>
+  </svg>
+)
+
+const SparkleIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z" fill="url(#sparkGrad)"/>
+    <path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8L18 14z" fill="url(#sparkGrad)" opacity="0.7"/>
+    <defs><linearGradient id="sparkGrad" x1="5" y1="2" x2="21" y2="20"><stop stopColor="#f9a8d4"/><stop offset="1" stopColor="#c084fc"/></linearGradient></defs>
+  </svg>
+)
+
+const BarberPoleIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <rect x="8" y="3" width="8" height="18" rx="4" stroke="url(#barberGrad)" strokeWidth="1.5" fill="none"/>
+    <path d="M8 7l8 4M8 11l8 4M8 15l8 4" stroke="url(#barberGrad)" strokeWidth="1" opacity="0.5"/>
+    <circle cx="12" cy="3" r="2" fill="url(#barberGrad)"/>
+    <defs><linearGradient id="barberGrad" x1="8" y1="3" x2="16" y2="21"><stop stopColor="#f472b6"/><stop offset="1" stopColor="#c084fc"/></linearGradient></defs>
+  </svg>
+)
+
+// ─── SCROLL REVEAL HOOK ───
+function useScrollReveal() {
+  useEffect(() => {
+    const targets = document.querySelectorAll('.stat-card, .feature-card, .step, .pricing-card, .speciality-card, .faq-item')
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed')
+          observer.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' })
+    targets.forEach(t => observer.observe(t))
+    return () => observer.disconnect()
+  }, [])
+}
+
 // ─── LOGO ───
 function LumaIcon({ size = 36, color = 'gradient' }) {
   const id = `lumaGrad_${Math.random().toString(36).slice(2, 8)}`
@@ -72,7 +175,7 @@ function Logo() {
 function NotificationCards() {
   const cards = [
     {
-      icon: "💅",
+      icon: <NailPolishIcon size={16} />,
       iconClass: "notif-card__icon--rose",
       label: "New Booking",
       labelClass: "notif-card__label--rose",
@@ -80,7 +183,7 @@ function NotificationCards() {
       time: "2 minutes ago",
     },
     {
-      icon: "💆",
+      icon: <MassageIcon size={16} />,
       iconClass: "notif-card__icon--lavender",
       label: "New Booking",
       labelClass: "notif-card__label--lavender",
@@ -88,7 +191,7 @@ function NotificationCards() {
       time: "8 minutes ago",
     },
     {
-      icon: "⭐",
+      icon: <StarIcon size={16} />,
       iconClass: "notif-card__icon--green",
       label: "New Review",
       labelClass: "notif-card__label--green",
@@ -155,6 +258,12 @@ function Hero() {
         <div className="hero__orb hero__orb--1" />
         <div className="hero__orb hero__orb--2" />
         <div className="hero__glow-bg" />
+        <div className="hero__particle hero__particle--1" />
+        <div className="hero__particle hero__particle--2" />
+        <div className="hero__particle hero__particle--3" />
+        <div className="hero__particle hero__particle--4" />
+        <div className="hero__particle hero__particle--5" />
+        <div className="hero__particle hero__particle--6" />
       </div>
 
       <div className="hero__content">
@@ -215,10 +324,10 @@ function Hero() {
 // ─── PROBLEM ───
 function Problem() {
   const stats = [
-    { icon: "📱", stat: "55%", label: "of calls to salons go unanswered" },
-    { icon: "⏰", stat: "12hrs+", label: "average reply time to client DMs" },
-    { icon: "🚪", stat: "30%", label: "of no-shows never get chased" },
-    { icon: "⭐", stat: "8%", label: "of happy clients leave reviews" },
+    { icon: <PhoneIcon size={28} />, stat: "55%", label: "of calls to salons go unanswered" },
+    { icon: <ClockIcon size={28} />, stat: "12hrs+", label: "average reply time to client DMs" },
+    { icon: <DoorIcon size={28} />, stat: "30%", label: "of no-shows never get chased" },
+    { icon: <StarIcon size={28} />, stat: "8%", label: "of happy clients leave reviews" },
   ]
 
   return (
@@ -317,53 +426,6 @@ function Features() {
   )
 }
 
-// ─── CONVERSATION DEMO ───
-function ConversationDemo() {
-  const messages = [
-    { from: "client", text: "Hi! Do you have any availability for a gel manicure this week?" },
-    { from: "luma", text: "Hi! Yes, we do. Would you prefer a classic gel manicure or gel with nail art? We also have a gel mani-pedi combo if you'd like both." },
-    { from: "client", text: "Just a classic gel manicure please. What times do you have on Friday?" },
-    { from: "luma", text: "On Friday we have 10:00am, 1:30pm, and 4:15pm available. A classic gel manicure takes about 45 minutes. Which time suits you best?" },
-    { from: "client", text: "1:30 please!" },
-    { from: "luma", text: "You're all booked for Friday at 1:30pm for a classic gel manicure. We'll send you a reminder the day before. See you then!" },
-  ]
-
-  return (
-    <section className="section demo">
-      <div className="demo__bg" />
-      <div className="container--narrow" style={{ position: 'relative' }}>
-        <div className="text-center" style={{ marginBottom: '64px' }}>
-          <span className="eyebrow">See It In Action</span>
-          <h2>Warm. Helpful. <span className="gradient-text">Effortless.</span></h2>
-          <p className="subtitle subtitle--center" style={{ marginTop: '16px' }}>
-            From enquiry to booked appointment in under 2 minutes.
-          </p>
-        </div>
-
-        <div className="phone">
-          <div className="phone__header">
-            <div className="phone__avatar"><LumaAvatarIcon size={32} /></div>
-            <div>
-              <div className="phone__name">Glow Beauty Studio</div>
-              <div className="phone__status">
-                <div className="phone__status-dot" />
-                LUMA is online
-              </div>
-            </div>
-          </div>
-          <div className="phone__messages">
-            {messages.map((msg, i) => (
-              <div key={i} className={`msg msg--${msg.from === 'client' ? 'client' : 'luma'}`}>
-                {msg.text}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 // ─── HOW IT WORKS ───
 function HowItWorks() {
   const steps = [
@@ -436,12 +498,12 @@ function BuiltForBeauty() {
           </div>
           <div className="speciality-grid">
             {[
-              { name: "Hair Salons", icon: "💇" },
-              { name: "Beauty / Nails", icon: "💅" },
-              { name: "Spas & Massage", icon: "💆" },
-              { name: "Wellness Clinics", icon: "🧘" },
-              { name: "Aesthetic Clinics", icon: "✨" },
-              { name: "Barbershops", icon: "💈" },
+              { name: "Hair Salons", icon: <ScissorsIcon size={28} /> },
+              { name: "Beauty / Nails", icon: <NailPolishIcon size={28} /> },
+              { name: "Spas & Massage", icon: <MassageIcon size={28} /> },
+              { name: "Wellness Clinics", icon: <YogaIcon size={28} /> },
+              { name: "Aesthetic Clinics", icon: <SparkleIcon size={28} /> },
+              { name: "Barbershops", icon: <BarberPoleIcon size={28} /> },
             ].map((s, i) => (
               <div key={i} className="card speciality-card">
                 <div className="speciality-card__icon">{s.icon}</div>
@@ -549,7 +611,7 @@ function SpeakToLuma() {
   const showSuggestions = messages.length <= 1 && !typing
 
   return (
-    <section className="section live-chat">
+    <section id="speak-to-luma" className="section live-chat">
       <div className="live-chat__bg" />
       <div className="container--narrow" style={{ position: 'relative' }}>
         <div className="text-center" style={{ marginBottom: '64px' }}>
@@ -720,9 +782,9 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <button className={`pricing-card__btn ${plan.featured ? 'pricing-card__btn--primary' : 'pricing-card__btn--outline'}`}>
+              <a href="#speak-to-luma" className={`pricing-card__btn ${plan.featured ? 'pricing-card__btn--primary' : 'pricing-card__btn--outline'}`}>
                 Get Started
-              </button>
+              </a>
             </div>
           ))}
         </div>
@@ -760,7 +822,9 @@ function FAQ() {
                 <span>{faq.q}</span>
                 <ChevronDown className={`faq-item__arrow ${open === i ? 'faq-item__arrow--open' : ''}`} />
               </button>
-              {open === i && <div className="faq-item__answer">{faq.a}</div>}
+              <div className={`faq-item__answer-wrap ${open === i ? 'faq-item__answer-wrap--open' : ''}`}>
+                <div className="faq-item__answer">{faq.a}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -784,7 +848,7 @@ function FinalCTA() {
         </p>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
           <a href="#pricing" className="btn btn--primary">View Plans</a>
-          <a href="mailto:kevin.flowstate@gmail.com" className="btn btn--outline">Book a Demo</a>
+          <a href="#speak-to-luma" className="btn btn--outline">Book a Demo</a>
         </div>
       </div>
     </section>
@@ -800,7 +864,7 @@ function Footer() {
         <div className="footer__links">
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
-          <a href="mailto:kevin.flowstate@gmail.com">Contact</a>
+          <a href="#speak-to-luma">Contact</a>
         </div>
         <div className="footer__credit">Powered by <span>Flowstate</span></div>
       </div>
@@ -810,13 +874,13 @@ function Footer() {
 
 // ─── APP ───
 export default function App() {
+  useScrollReveal()
   return (
     <>
       <Nav />
       <Hero />
       <Problem />
       <Features />
-      <ConversationDemo />
       <HowItWorks />
       <BuiltForBeauty />
       <SpeakToLuma />
